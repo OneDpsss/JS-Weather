@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<div class="container">
+    <div class="app-header">
+        <h1><i class="fas fa-cloud-sun animated-icon"></i> Weather Forecast</h1>
+        <div class="header-controls">
+            <div class="unit-toggle">
+                <button id="celsiusBtn" class="unit-btn active">°C</button>
+                <button id="fahrenheitBtn" class="unit-btn">°F</button>
+            </div>
+            <div class="search-container">
+                <label for="cityInput" class="sr-only">Enter city name</label>
+                <input type="text" id="cityInput" placeholder="Enter city name" aria-label="City name input">
+                <button id="searchBtn" aria-label="Search weather"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="currentWeather" class="weather-card hidden">
+        <div class="weather-main">
+            <h2 id="cityName"></h2>
+            <div class="temp-display">
+                <span id="currentTemp"></span>
+                <img id="weatherIcon" src="" alt="Weather icon">
+            </div>
+            <p id="weatherDesc"></p>
+        </div>
+        <div class="weather-details">
+            <div class="detail-item">
+                <i class="fas fa-temperature-high"></i>
+                <span id="feelsLike"></span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-tint"></i>
+                <span id="humidity"></span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-wind"></i>
+                <span id="windSpeed"></span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-compress-alt"></i>
+                <span id="pressure"></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="forecast" class="hidden">
+        <h3><i class="fas fa-calendar-alt"></i> 5-Day Forecast</h3>
+        <div class="forecast-container" id="forecastItems"></div>
+    </div>
+
+    <div id="forecastModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="modalClose" class="modal-close">&times;</span>
+            <h3 id="modalDate"></h3>
+            <div class="modal-details">
+                <p id="modalTemp"></p>
+                <p id="modalWeather"></p>
+                <p id="modalMinMax"></p>
+                <p id="modalHumidity"></p>
+                <p id="modalWind"></p>
+                <img id="modalIcon" src="" alt="Weather icon">
+            </div>
+        </div>
+    </div>
+
+    <div id="error" class="error hidden"></div>
+</div>
+<script src="./main.js"></script>
+</body>
+</html>
